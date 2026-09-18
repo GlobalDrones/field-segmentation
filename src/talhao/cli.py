@@ -163,7 +163,9 @@ def train(
 
     typer.echo(f"✅  Treinamento concluído. Resultados em: {output_dir}")
 
+
 # evaluate
+
 
 @app.command()
 def evaluate(
