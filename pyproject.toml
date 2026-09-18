@@ -1,0 +1,64 @@
+[project]
+name = "talhao"
+version = "1.0.0"
+description = "Pipeline profissional de Segmentação de Instâncias para mapeamento de talhões agrícolas com YOLO."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Alisson Pereira Ferreira"}
+]
+keywords = ["yolo", "segmentation", "agriculture", "drone", "deep-learning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.11"
+dependencies = [
+    # Core ML
+    "ultralytics>=8.4.154",
+    # Data sources
+    "agrosmartds",
+    "roboflow>=1.4.2",
+    # Configuration & environment
+    "pydantic-settings>=2.7.0",
+    "python-dotenv>=1.2.3",
+    # CLI & terminal output
+    "typer>=0.15.0",
+    "rich>=13.9.0",
+    # Data utilities
+    "pyyaml>=6.0.3",
+]
+
+[project.urls]
+Repository = "https://github.com/GlobalDrones/field-segmentation"
+
+[project.scripts]
+talhao = "talhao.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+agrosmartds = { git = "https://github.com/GlobalDrones/PySDKs.git", rev = "fix/sdk-core-bugs" }
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "PLC"]
+ignore = ["E501", "PLC0415"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["talhao"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
