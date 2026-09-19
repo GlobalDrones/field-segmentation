@@ -62,13 +62,13 @@ uv run talhao download agrosmart
 # Baixar o dataset validado (Roboflow v10)
 uv run talhao download roboflow
 
-# Dividir o dataset AgroSmart em train/val/test (80/10/10 por padrão)
+# Dividir o dataset AgroSmart em train/val/test (70/15/15 por padrão)
 uv run talhao split
 ```
 
 > **Opções avançadas de split:**
 > ```bash
-> uv run talhao split --train-ratio 0.7 --val-ratio 0.15 --test-ratio 0.15 --seed 123
+> uv run talhao split --train-ratio 0.8 --val-ratio 0.1 --test-ratio 0.1 --seed 123
 > ```
 
 ---

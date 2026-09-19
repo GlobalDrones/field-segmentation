@@ -45,7 +45,7 @@ models = ["yolov8n-seg.pt", "yolo11n-seg.pt", "yolo26n-seg.pt"]
 
 epochs = 500
 patience = 50
-img_size = 640
+img_size = 1024
 
 for data_yaml in datasets:
     dataset_name = data_yaml.split("/")[1]

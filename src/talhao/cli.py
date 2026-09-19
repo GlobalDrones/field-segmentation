@@ -91,9 +91,9 @@ def split(
         str | None,
         typer.Option(help="Classes separadas por vírgula. Ex: 'talhao-virtual,cultivo'."),
     ] = None,
-    train_ratio: Annotated[float, typer.Option(help="Proporção para treino.")] = 0.8,
-    val_ratio: Annotated[float, typer.Option(help="Proporção para validação.")] = 0.1,
-    test_ratio: Annotated[float, typer.Option(help="Proporção para teste.")] = 0.1,
+    train_ratio: Annotated[float, typer.Option(help="Proporção para treino.")] = 0.7,
+    val_ratio: Annotated[float, typer.Option(help="Proporção para validação.")] = 0.15,
+    test_ratio: Annotated[float, typer.Option(help="Proporção para teste.")] = 0.15,
     seed: Annotated[int, typer.Option(help="Seed aleatória.")] = 42,
 ) -> None:
     """Divide o dataset AgroSmart em treino / validação / teste."""
